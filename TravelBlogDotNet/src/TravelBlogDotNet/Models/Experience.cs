@@ -11,8 +11,9 @@ namespace TravelBlogDotNet.Models
     public class Experience
     {
         [Key]
-        public int id { get; set; }
-        public int location_id { get; set; }
-        public string description { get; set; }
+        public int ExperienceId { get; set; }
+        public int LocationId { get; set; }
+        public string Description { get; set; }
+        public virtual Location Location { get; set; }
     }
 }

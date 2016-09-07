@@ -1,17 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-@model IEnumerable<TravelBlogDotNet.Models.Experience>
+﻿@model IEnumerable<TravelBlogDotNet.Models.Experience>
 
 @{
+    ViewData["Title"] = "Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>World Travel</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.LocationName)
+        </th>
+        <th></th>
+    </tr>
 
-<h2>Experience List</h2>
-<h4>@Html.DisplayNameFor(model => model.description)</h4>
-<ul>
-    @foreach(var listItem in Model)
+    @foreach (var listItem in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listItem.description)</li>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Location.LocationName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listItem.ExperienceId }) |
+                @Html.ActionLink("Details", "Details", new { id = listItem.ExperienceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.ExperienceId })
+            </td>
+        </tr>
     }
-</ul>
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

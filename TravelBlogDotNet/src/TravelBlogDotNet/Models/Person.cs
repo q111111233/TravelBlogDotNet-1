@@ -11,8 +11,9 @@ namespace TravelBlogDotNet.Models
     public class Person
     {
         [Key]
-        public int ExperienceId { get; set; }
+        public int PersonId { get; set; }
         public int LocationId { get; set; }
-        public string Description { get; set; }
+        public int ExperienceId { get; set; }
+        public string Name { get; set; }
     }
 }
