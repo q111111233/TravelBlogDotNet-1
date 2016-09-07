@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<TravelBlogDotNet.Models.Experience>
+
+@{
+}
+
+<h2>Experience List</h2>
+<h4>@Html.DisplayNameFor(model => model.description)</h4>
+<ul>
+    @foreach(var listItem in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listItem.description)</li>
+    }
+</ul>
